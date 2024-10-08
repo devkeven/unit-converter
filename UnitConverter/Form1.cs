@@ -11,12 +11,10 @@ namespace UnitConverter
 		{
 			lblMessage.Text = "";
 
-			//string[] installs = new string[] { "Meter to Kilometer", "Meter to Yard", "Custom" };
-			//cbTypeConversion.Items.AddRange(installs);
-
 			cbTypeConversion.Items.Insert(0, "Meter to Kilometer");
 			cbTypeConversion.Items.Insert(1, "Kilometer to Meter");
 			cbTypeConversion.Items.Insert(2, "Meter to Yard");
+			cbTypeConversion.Items.Insert(3, "Meter to Foot");
 
 			cbTypeConversion.SelectedIndex = 0;
 		}
@@ -49,6 +47,11 @@ namespace UnitConverter
 					decimal result = insertedNumber * 1.0936m;
 					txtResult.Text = result.ToString();
 				}
+				else if (cbTypeConversion.SelectedIndex == 3)
+				{
+					decimal result = insertedNumber * 3.28m;
+					txtResult.Text = result.ToString();
+				}
 
 			}
 
@@ -67,6 +70,10 @@ namespace UnitConverter
 			else if (cbTypeConversion.SelectedIndex == 2)
 			{
 				lblMeasurement.Text = "yd";
+			}
+			else if (cbTypeConversion.SelectedIndex == 3)
+			{
+				lblMeasurement.Text = "ft";
 			}
 		}
 	}
