@@ -35,7 +35,7 @@
 			label2 = new Label();
 			label3 = new Label();
 			btnConvert = new Button();
-			label4 = new Label();
+			lblMeasurement = new Label();
 			lblMessage = new Label();
 			label5 = new Label();
 			SuspendLayout();
@@ -47,6 +47,7 @@
 			cbTypeConversion.Name = "cbTypeConversion";
 			cbTypeConversion.Size = new Size(155, 23);
 			cbTypeConversion.TabIndex = 0;
+			cbTypeConversion.SelectedIndexChanged += cbTypeConversion_SelectedIndexChanged;
 			// 
 			// label1
 			// 
@@ -100,14 +101,14 @@
 			btnConvert.UseVisualStyleBackColor = true;
 			btnConvert.Click += btnConvert_Click;
 			// 
-			// label4
+			// lblMeasurement
 			// 
-			label4.AutoSize = true;
-			label4.Location = new Point(340, 148);
-			label4.Name = "label4";
-			label4.Size = new Size(24, 15);
-			label4.TabIndex = 7;
-			label4.Text = "km";
+			lblMeasurement.AutoSize = true;
+			lblMeasurement.Location = new Point(340, 148);
+			lblMeasurement.Name = "lblMeasurement";
+			lblMeasurement.Size = new Size(24, 15);
+			lblMeasurement.TabIndex = 7;
+			lblMeasurement.Text = "km";
 			// 
 			// lblMessage
 			// 
@@ -137,7 +138,7 @@
 			ClientSize = new Size(477, 282);
 			Controls.Add(label5);
 			Controls.Add(lblMessage);
-			Controls.Add(label4);
+			Controls.Add(lblMeasurement);
 			Controls.Add(btnConvert);
 			Controls.Add(label3);
 			Controls.Add(label2);
@@ -161,7 +162,7 @@
 		private Label label2;
 		private Label label3;
 		private Button btnConvert;
-		private Label label4;
+		private Label lblMeasurement;
 		private Label lblMessage;
 		private Label label5;
 	}

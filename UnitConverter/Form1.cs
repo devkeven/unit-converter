@@ -15,6 +15,7 @@ namespace UnitConverter
 			//cbTypeConversion.Items.AddRange(installs);
 
 			cbTypeConversion.Items.Insert(0, "Meter to Kilometer");
+			cbTypeConversion.Items.Insert(1, "Kilometer to Meter");
 			//cbTypeConversion.Items.Insert(1, "Meter to Yard");
 
 			cbTypeConversion.SelectedIndex = 0;
@@ -35,14 +36,30 @@ namespace UnitConverter
 			{
 				if (cbTypeConversion.SelectedIndex == 0)
 				{
-					//MessageBox.Show(cbTypeConversion.SelectedItem.ToString());
 					decimal result = insertedNumber / 1000;
+					txtResult.Text = result.ToString();
+				}
+				else if (cbTypeConversion.SelectedIndex == 1)
+				{
+					decimal result = insertedNumber * 1000;
 					txtResult.Text = result.ToString();
 				}
 
 			}
 
-			
+
+		}
+
+		private void cbTypeConversion_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cbTypeConversion.SelectedIndex == 0)
+			{
+				lblMeasurement.Text = "km";
+			}
+			else if (cbTypeConversion.SelectedIndex == 1)
+			{
+				lblMeasurement.Text = "m";
+			}
 		}
 	}
 }
